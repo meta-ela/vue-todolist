@@ -59,6 +59,7 @@ new Vue ({
                 done: false,
             },
         ],
+        newItem:"",
     },
 
     methods: {
@@ -66,7 +67,7 @@ new Vue ({
             this.toDoList.splice(itemToDelete, 1);
         },
         addBtn: function() {
-            let askItem = prompt("Inserisci un nuovo item");
+            let askItem = this.newItem;
 
             this.toDoList.push({
                 text: askItem,
