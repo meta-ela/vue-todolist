@@ -17,12 +17,16 @@
         <div class="container py-5 min-vh-100">
             <div class="d-flex justify-content-center py-5 h-100">
                 <div class="card">
-                    <div class="card-body">
-                        <div class="card-title text-center">Vue ToDo List</div>
+                    <div class="card-body p-5">
+                        <div class="card-title text-center fs-2">Vue ToDo List</div>
                         <ul class="list-unstyled">
                             <li v-for="(item, i) in toDoList">
-                                <input type="checkbox" name="check" :id="'listItem_' + i">
-                                <label :for="'listItem_' + i">{{item.text}}</label>
+                                <!-- con la i stampo in li un numero progressivo per
+                                creare un id diverso per ogni item, 
+                            al true aggiunge text-decoration-line-through-->
+                                <input v-model="item.done" type="checkbox" name="check" :id="'listItem_' + i">
+                                <label :class="{'text-decoration-line-through': item.done}" :for="'listItem_' + i">{{item.text}}</label>
+                                <a class="text-danger fw-bold" href="#">X</a>
                             </li>
                         </ul>
                     </div>

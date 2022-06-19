@@ -40,7 +40,7 @@ new Vue ({
         toDoList: [
             {
                 text: "pulire casa",
-                done: false,
+                done: true,
             },
             {
                 text: "fare la spesa",
