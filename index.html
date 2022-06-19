@@ -26,7 +26,9 @@
                             al true aggiunge text-decoration-line-through-->
                                 <input v-model="item.done" type="checkbox" name="check" :id="'listItem_' + i">
                                 <label :class="{'text-decoration-line-through': item.done}" :for="'listItem_' + i">{{item.text}}</label>
-                                <a class="text-danger fw-bold" href="#">X</a>
+                                <!-- per cancellare una singola riga bisogna aggiungere
+                                l'indice per identificare, come con la check -->
+                                <a class="text-danger fw-bold" @click="deleteBtn(i)" href="javascript:void(0)">X</a>
                             </li>
                         </ul>
                     </div>

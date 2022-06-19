@@ -40,7 +40,7 @@ new Vue ({
         toDoList: [
             {
                 text: "pulire casa",
-                done: true,
+                done: false,
             },
             {
                 text: "fare la spesa",
@@ -59,5 +59,11 @@ new Vue ({
                 done: false,
             },
         ],
+    },
+
+    methods: {
+        deleteBtn(itemToDelete) {
+            this.toDoList.splice(itemToDelete, 1);
+        }
     }
 });
